@@ -26,7 +26,8 @@ ci_np <- read_excel(here("data", "ci_np.xlsx"))
 
 ```{r}
 ##plotting time!
-
+ggplot2::ggplot(data = ci_np, aes(x = year, y = visitors)) +
+  geom_line()
 ```
 
 
