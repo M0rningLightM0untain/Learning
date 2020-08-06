@@ -33,13 +33,24 @@ ggplot2::ggplot(data = ci_np, aes(x = year, y = visitors)) +
 gg_base <- ggplot2::ggplot(data = ci_np, aes(x = year, y = visitors))
 
 ##using the new code chunk
-gg_base +
+#gg_base +
+ # geom_point(
+  #  color = "blue",
+   # pch = 16,
+    #size = 2,
+    #alpha = 1
+  #)
+
+gg_base + 
   geom_point(
-    color = "blue",
-    pch = 16,
-    size = 2,
-    alpha = 1
-  )
+    aes(size = visitors,
+        color = visitors),
+    alpha = 0.6
+  ) +
+  theme_linedraw()
+
+gg_base +
+  geom_col(aes(fill = visitors))
 ```
 
 
