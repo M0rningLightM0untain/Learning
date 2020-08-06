@@ -1,0 +1,20 @@
+---
+title: "Pivot_Table_testing"
+author: "Jack Sudds"
+date: "06/08/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+##attatch libraries
+library(tidyverse)
+library(readxl)
+library(here)
+library(skimr) #install.packages("skimr")
+library(kableExtra) #install.packages("kableExtra")
+```
+
