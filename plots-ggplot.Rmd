@@ -4,3 +4,29 @@ author: "Jack Sudds"
 date: "06/08/2020"
 output: html_document
 ---
+```{r}
+##setup of packages
+#install.packages("tidyverse")
+#install.packages("readxl")
+#install.packages("here")
+library(tidyverse)
+library(readxl)
+library(here)
+
+##create code chunk, read file, location from file using here
+ca_np <- read_csv(here("data", "ca_np.csv"))
+names(ca_np)
+summary(ca_np)
+```
+
+```{r}
+##read excell file
+ci_np <- read_excel(here("data", "ci_np.xlsx"))
+```
+
+```{r}
+##plotting time!
+
+```
+
+
