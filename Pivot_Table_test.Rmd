@@ -66,6 +66,8 @@ tweaked_lobsters <- lobsters %>%
 #tweaked_lobsters %>%
   #kable()
 
+##subset variables with columns
+
 tweaked_lobsters %>%
   select(date, site, size_m)
 ```
