@@ -9,12 +9,50 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r}
+```{r libraries, echo=FALSE, include=FALSE}
 ##attatch libraries
 library(tidyverse)
 library(readxl)
 library(here)
 library(skimr) #install.packages("skimr")
 library(kableExtra) #install.packages("kableExtra")
+```
+
+```{r importing_data, include=FALSE}
+##bring in THE DATA
+lobsters <- read_excel(here("data/lobsters2.xlsx"), skip=4)
+
+skimr::skim(lobsters)
+```
+
+```{r simple_summaries, include=FALSE}
+##create the tables and summarize
+lobsters %>%
+  group_by(year) %>%
+  summarise(count_by_year = n())
+
+lobsters %>%
+  group_by(site, year) %>%
+  summarise(count_by_siteyear = n())
+``` 
+
+```{r complex_summaries, include=FALSE}
+##multiple summarised variables
+siteyear_summary <- lobsters %>%
+  group_by(site, year) %>%
+  summarise(count_by_siteyear = n(),
+            mean_size_mm = mean(size_mm, na.rm=TRUE),
+            sd_size_mm = sd(size_mm, na.rm=TRUE))
+```
+
+```{r kabling}
+siteyear_summary %>%
+  kable()
+```
+
+There are `r nrow(lobsters)` total lobsters included in this report
+
+```{r}
+
 ```
 
