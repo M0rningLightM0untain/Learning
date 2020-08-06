@@ -28,6 +28,13 @@ ci_np <- read_excel(here("data", "ci_np.xlsx"))
 ##plotting time!
 ggplot2::ggplot(data = ci_np, aes(x = year, y = visitors)) +
   geom_line()
+
+##turn the graph into a new code chunk!
+gg_base <- ggplot2::ggplot(data = ci_np, aes(x = year, y = visitors))
+
+##using the new code chunk
+gg_base +
+  geom_col()
 ```
 
 
