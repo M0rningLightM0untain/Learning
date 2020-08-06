@@ -52,7 +52,21 @@ siteyear_summary %>%
 
 There are `r nrow(lobsters)` total lobsters included in this report
 
-```{r}
+```{r counting_over_kable}
+lobsters %>%
+  count(site, year)
+```
 
+There are `r count(lobsters)` lobsters in this dataset
+
+```{r x_men_chart}
+tweaked_lobsters <- lobsters %>%
+  mutate(size_m = size_mm / 1000)
+
+#tweaked_lobsters %>%
+  #kable()
+
+tweaked_lobsters %>%
+  select(date, site, size_m)
 ```
 
