@@ -79,10 +79,11 @@ gg_np <- ggplot2::ggplot(data = ca_np, aes(x = year, y = visitors, group = park_
 
 ##faceting
 gg_np +
-  geom_line(show.legend = FLASE)
+  geom_line() +
   theme_light() +
     labs(x = "Year", y = "annual visitors") +
     facet_wrap(~ park_name)
+ggsave(here("figures", "saving_graphs_is_a_novelty.jpg"), dpi = 180, width = 8, height = 7)
                          
 ```
 
