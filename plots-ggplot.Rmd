@@ -32,25 +32,43 @@ ggplot2::ggplot(data = ci_np, aes(x = year, y = visitors)) +
 ##turn the graph into a new code chunk!
 gg_base <- ggplot2::ggplot(data = ci_np, aes(x = year, y = visitors))
 
-##using the new code chunk
-#gg_base +
- # geom_point(
-  #  color = "blue",
-   # pch = 16,
-    #size = 2,
-    #alpha = 1
-  #)
-
+##using code chunk to build graphs ... various
 gg_base + 
   geom_point(
-    aes(size = visitors,
+    aes(size = year,
         color = visitors),
     alpha = 0.6
   ) +
-  theme_linedraw()
+  geom_line(color = "red") +
+  theme_linedraw() +
+  labs(
+    x = "Year",
+    y = "Annual Park Visitors",
+    title = "Channel Islands NP Visitors",
+    subtitle = "(1963 - 2016)"
+  )
 
 gg_base +
-  geom_col(aes(fill = visitors))
+  geom_col(aes(fill = visitors)) +
+  theme_linedraw() +
+  labs(
+    x = "Year",
+    y = "Annual Park Visitors",
+    title = "Channel Islands NP Visitors",
+    subtitle = "(1963 - 2016)"
+  )
+    
+gg_base +
+  geom_col(fill = "orange",
+           color = "purple4") +
+  geom_line(color = "green") +
+  theme_linedraw() +
+  labs(
+    x = "Year",
+    y = "Annual Park Visitors",
+    title = "Channel Islands NP Visitors",
+    subtitle = "(1963 - 2016)"
+  )
 ```
 
 
