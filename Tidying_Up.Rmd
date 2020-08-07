@@ -36,3 +36,10 @@ inverts_wide <- inverts_long %>%
                 values_from = sp_count)
 ```
 
+```{r janitor_stuffs}
+##janitor can be used to clean up stuff (clean_names(), get_dupes(), remove_empty() & adorn_*())
+
+inverts_wide <- inverts_wide %>%
+janitor::clean_names()
+```
+
