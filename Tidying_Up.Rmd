@@ -9,4 +9,14 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r packaging}
+library(tidyverse)
+library(here)
+library(readxl)
+library(janitor)#install.packages("janitor")
+```
+
+```{r data_insert}
+inverts <- read_excel(here("data", "inverts.xlsx"))
+```
 
