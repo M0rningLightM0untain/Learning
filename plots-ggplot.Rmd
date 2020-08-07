@@ -4,7 +4,7 @@ author: "Jack Sudds"
 date: "06/08/2020"
 output: html_document
 ---
-```{r}
+```{r packaging}
 ##setup of packages
 #install.packages("tidyverse")
 #install.packages("readxl")

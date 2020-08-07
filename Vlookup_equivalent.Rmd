@@ -1,0 +1,24 @@
+---
+title: "Vlookup_equivalent"
+author: "Jack Sudds"
+date: "07/08/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r packaging}
+library(tidyverse)
+library(here)
+library(readxl)
+library(kableExtra)
+```
+
+```{r data_in}
+
+fish <- read_csv(here("data", "fish.csv"))
+kelp_abur <- read_excel(here("data", "kelp.xlsx"), sheet = "abur")
+```
+
