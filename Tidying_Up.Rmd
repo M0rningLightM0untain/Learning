@@ -20,3 +20,19 @@ library(janitor)#install.packages("janitor")
 inverts <- read_excel(here("data", "inverts.xlsx"))
 ```
 
+```{r pivoting_tables}
+inverts_long = tidyr::pivot_longer(data = inverts,
+                      cols = '2016':'2018',
+                      names_to = "year",
+                      values_to = "sp_count")
+
+##converting the "year" column to a numeric value rather than character
+#inverts_long <- inverts_long %>%
+   #mutate(year = as.numeric(year))
+
+##converting from long to wide
+inverts_wide <- inverts_long %>%
+  pivot_wider(names_from = common_name,
+                values_from = sp_count)
+```
+
