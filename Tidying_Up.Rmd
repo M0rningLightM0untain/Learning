@@ -41,5 +41,41 @@ inverts_wide <- inverts_long %>%
 
 inverts_wide <- inverts_wide %>%
 janitor::clean_names()
+
+```
+
+```{r uniting}
+##taking multiple columns and turnign them innto a single one
+inverts_unite <- inverts_long %>%
+  unite(col = "site_year",
+        c(site, year),
+        sep = "_")
+
+inverts_moyr <- inverts_long %>%
+  unite(col = "mo_yr",
+        c(month,year),
+        sep = "/")
+
+##can also do more than 2 columns
+
+inverts_experimental <- inverts_long %>%
+  unite(col = "mo_yr_site",
+        c(month, year, site),
+        sep = "-")
+
+##seperating 1 column into multiple
+
+inverts_sep <- inverts_unite %>%
+  tidyr::separate(site_year, into = c("my_site", "my_year"))
+
+##fixing spelling mistakes - WARNING dumb machine finds strings even in other words
+
+ca_abbr <- inverts %>%
+  mutate(
+    common_name = 
+      str_replace(common_name, 
+                  pattern = "california",
+                  replacement = "CA")
+  )
 ```
 
