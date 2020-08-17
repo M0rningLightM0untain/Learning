@@ -4,6 +4,10 @@ author: "Jack Sudds"
 date: "17/08/2020"
 output: html_document
 ---
+```{r Packages}
+library(tidyverse)
+
+```
 
 ```{r printing stuff and the basics}
 ##cat is better than print at doing bits inbetween but cant do compound functions like lists and matrices 
@@ -28,5 +32,27 @@ f <- function(n, p) sqrt(p*(1-p)/n)
 ##remove all oblects
 #rm(list = ls())
 ls.str()
+
+##vector basics, c() makes them quick and simple, if there are different types then it accomodates by conversion, the mode() funtion can tell you what type sth is
+
+a <- c(1,2,3)
+b <- c(4,5,6)
+c <- c("A", "B", "C")
+c(a,b,c)
+mode(c)
 ```
+
+```{r basic stats}
+#basic stuff fisrt
+stat <- c(0,1,1,2,3,5,8,13,21,34)
+cat("\n", "The Mean is =", mean(stat), "\n", "The Median is =", median(stat), "\n", "The Standard Deviaton is =", sd(stat), "\n", "The Variance is =", var(stat))
+stat1 <- log(stat + 1)
+cat("\n", "Correlation =", cor(stat, stat1), "\n", "Covariance", cov(stat, stat1))
+
+##now we get to dataframes again using "cars" as 
+```
+
+
+
+
 
