@@ -1,0 +1,32 @@
+---
+title: "Cookbook learning platform"
+author: "Jack Sudds"
+date: "17/08/2020"
+output: html_document
+---
+
+```{r printing stuff and the basics}
+##cat is better than print at doing bits inbetween but cant do compound functions like lists and matrices 
+cat("The error occurs at", 2*pi, "radians", "\n")
+print(matrix(c(1,2,3,4), 2,2))
+
+cat("\n", "Simple Square rooting", "\n")
+x <- 3
+y <- 4
+z <- sqrt(x^2 + y^2)
+print(z)
+
+##finding out what objects exist with ls(), and ls.str()
+x <- 10
+y <- 8
+z <- c("three", "blind", "mice")
+f <- function(n, p) sqrt(p*(1-p)/n)
+#ls.str()
+
+##remove objects with rm()
+#rm(x, y, z, f)
+##remove all oblects
+#rm(list = ls())
+ls.str()
+```
+
