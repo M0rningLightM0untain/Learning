@@ -47,9 +47,22 @@ mode(c)
 stat <- c(0,1,1,2,3,5,8,13,21,34)
 cat("\n", "The Mean is =", mean(stat), "\n", "The Median is =", median(stat), "\n", "The Standard Deviaton is =", sd(stat), "\n", "The Variance is =", var(stat))
 stat1 <- log(stat + 1)
-cat("\n", "Correlation =", cor(stat, stat1), "\n", "Covariance", cov(stat, stat1))
+cat("\n", "Correlation =", cor(stat, stat1), "\n", "Covariance", cov(stat, stat1), "\n")
 
-##now we get to dataframes again using "cars" as 
+##now we get to dataframes again using "cars"
+data(cars)
+map_dbl(cars, mean)
+cor(cars)
+
+##sequences
+seq(from = 0, to = 40, by = 4)
+seq(from = 0, to = 100, length.out = 11)
+seq(from = 1.0, to = 2.0, length.out = 5)
+rep(pi, time = 5)
+
+##comparisons between vectors, == is equality, != is inequality, <, >, <=, & >= are the usual
+
+
 ```
 
 
