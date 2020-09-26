@@ -87,6 +87,8 @@ formattable(siteyear_summary,
             align = c ("l","c","c","c","r"),
             list(`site` = formatter(
               "span", style = ~ style(color = "grey", font.weight = "bold")),
-              `count_by_siteyear` = color_bar("#2bfe72"))) 
+              #`count_by_siteyear` = color_bar("#2bfe72"))) 
+              area(col = 3) ~ color_tile("#DeF7E9", "#71CA97")))
+
 ```
 
