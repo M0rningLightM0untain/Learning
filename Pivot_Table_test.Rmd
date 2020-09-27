@@ -15,7 +15,7 @@ library(tidyverse)
 library(readxl)
 library(here)
 library(skimr) #install.packages("skimr")
-#library(kableExtra) #install.packages("kableExtra")
+library(kableExtra) #install.packages("kableExtra")
 library(formattable)#install.packages("formattable")
 ```
 
@@ -75,12 +75,12 @@ tweaked_lobsters %>%
 
 ```{r formattable for nice tables}
 
-#formattable(siteyear_summary) #generates formattable table from dataframe
-#formattable(siteyear_summary,
-            #align = c ("l","c","c","c","r"),
-            #list(`site` = formatter(
-             # "span", style = ~ style(color = "grey", font.weight = "bold")),
-              #`count_by_siteyear` = color_bar("#2bfe72")))  
+formattable(siteyear_summary) #generates formattable table from dataframe
+formattable(siteyear_summary,
+            align = c ("l","c","c","c","r"),
+            list(`site` = formatter(
+             "span", style = ~ style(color = "grey", font.weight = "bold")),
+            `count_by_siteyear` = color_bar("#2bfe72")))  
   #alter formatting of individual columns and add color bars, can also express the column as a percent with "= percent" 
 
 formattable(siteyear_summary,
